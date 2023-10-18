@@ -1,0 +1,15 @@
+h1{
+    border: 2px solid red;
+ background-color: bisque;
+
+}
+
+#heading2{
+    border: 2px solid green;
+    background-color: orange;
+}
+
+p{
+    background-color: aquamarine;
+    border: 2px solid black;
+}
