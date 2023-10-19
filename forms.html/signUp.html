@@ -11,28 +11,31 @@
 </head>
 <body>
     <form action="signup.js">
-        <h1>Sign Up</h1>
+        <div class="full">
+        <h1>Sign Up</h1><br>
 
         <div>
         <label for="textID"> First Name </label>
         <input type="text" name="myText" id="textID" value="Enter first name">
-    </div>
+    </div><br>
         
     <div>
         <label for="textID1"> Last Name </label>
         <input type="text" name="myText1" id="textID1" value="Enter last name">
-    </div>
+    </div><br>
 
-        <label for="dates">Date of Birth </label>
+    <div>
+        <label for="Dates">Date of Birth </label>
         <select name="Dates" id="dates">
-            <option value="Date">Dates</option>
+            <option value="Date">Date</option>
         </select>
         <select name="Months">
-            <option value="months">Months</option>
+            <option value="months">Month</option>
         </select>
         <select name="Year">
             <option value="year">Year</option>
         </select>
+    </div><br>
     
         <div>
         <label for="Male">Gender:</label>
@@ -42,13 +45,44 @@
 
         <input type="radio" id="Female">
         <label for="Female">Female</label>
-    </div>
+    </div><br>
 
     <div>
         <label for="country">Country</label>
         <select name="country" id="country">
         <option value="country">Country</option>
     </select>
+    </div><br>
+
+    <div>
+        <label for="email">E-mail</label>
+        <input type="text" id="email" value="Enter E-mail">
+    </div><br>
+
+    <div>
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" value="Enter phone no">
+    </div><br>
+
+    <div>
+        <label for="password">Password</label>
+        <input type="text" id="password">
+    </div><br>
+
+    <div>
+        <label for="confirm">Confirm Password</label>
+        <input type="text" id="confirm">
+    </div><br>
+
+    <div>
+        <input type="checkbox" id="agree">
+        <label for="agree">I Agree to the Terms of use</label>
+    </div><br>
+
+    <div class="hi" style="background-color: orange;">
+    
+        <button type="submit" style="background-color: green;">Submit</button>
+        <button type="submit" style="background-color: red;">Cancel</button>
     </div>
 
     </form>

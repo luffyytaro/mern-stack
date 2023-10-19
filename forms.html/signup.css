@@ -6,6 +6,12 @@
 h1{
     background-color: orange;
     color: yellow;
-
+    text-align: left;
 }
-form,label,input
+.full{
+    background-color: rgb(27, 27, 66);
+    color: yellow;
+    text-align: center;
+   
+   
+}
