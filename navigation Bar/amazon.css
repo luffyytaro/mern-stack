@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+p{
+    cursor: pointer;
+    color: orangered;
+    height: 60px;
+    font-size: 25px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f1111;
+    text-decoration: none;
+}
+ul{
+    display: flex;
+    font-size: 16px;
+    text-decoration: none;
+    gap: 20px;
+   
+   
+}

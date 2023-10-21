@@ -1,0 +1,12 @@
+*{
+    margin: 0px;
+    padding: 3px;
+    box-sizing: border-box;
+}
+.hi{
+    background-color: #0f1111;
+    height: 60px;
+   display: inline;
+
+
+}
