@@ -1,0 +1,13 @@
+.background{
+    position: fixed;
+    top: 10px;
+    right: 0px;
+    width: 60%;
+    height: 70%;
+    background-image: url('../images/pine-watt-2Hzmz15wGik-unsplash.jpg');
+    background-size: contain;
+    z-index: -1;
+}
+.p1{
+    color: black;
+}
