@@ -76,27 +76,40 @@ nav{
 }
 
 .section2{
+    display: flex;
+    padding: 10px;
     background-color: white;
+    justify-content: space-around;
     position: sticky;
     top: 0px;
+    
+    
 }
 
 ul{
     list-style-type: none;
     display: flex;
-    margin-left: 45px;
+    margin-left: 0px;
     align-items: center;
     text-decoration: none;
 }
 
-.allensollylogo{
-    margin-right: 30px;
+
+
+.search{
+    display: flex;
+    align-items: center;
+}
+ 
+.search input{
+    border: 0;
 }
 
-.section2,.men,.women,.boys,.girls,.newarrival,.specialsizes,.sales,.search{
+.men,.women,.boys,.girls,.newarrival,.specialsizes,.sales,.search{
     margin-right: 30px;
     margin-left: 40px;
 }
+
 
 .delivery{
     background-color: #FFDF00;
@@ -231,9 +244,6 @@ justify-content: right;
     justify-content: space-evenly;
  }
  
-
-.shirts{
-    margin-top: 25px;
-    color
+.section5{
+    background-color: #0E3051;
 }
-
