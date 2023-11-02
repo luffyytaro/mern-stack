@@ -241,9 +241,27 @@ justify-content: right;
  .photos{
     margin-top: 10px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
  }
  
 .section5{
     background-color: #0E3051;
+    padding: 9px;
+    margin-top: 25px; 
+}
+ 
+.heading{
+    text-align: center;
+}
+
+.categories{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    margin-top: 40px;
+}
+
+.categories1, .categories2, .categories3, .categories4, .categories5{
+    margin-left: 20px;
+    margin-right: 20px;
 }
