@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    margin: auto;
+    padding: 1rem;
+    border: 2px solid brown;
+}
+
+form input{
+    margin: 1rem;
+    font-size: 25px;
+    border-radius: 6px;
+}
+
+input[type='text']{
+    background-color: yellow;
+    border: 2px solid black;
+    color: red;
+}
+input[type='email']{
+    background-color: cyan;
+    border: 2px solid black;
+    color: black
+}
+input[type='password']{
+    background-color: greenyellow;
+    border: 2px solid black;
+}
+
+a{
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+}
+a{
+    background-color: rgb(71, 202, 241);
+}
+a[target='_self']{
+    background-color: aquamarine;
+}
+a[target='_blank']{
+    background-color: bisque;
+}
+
+UL{
+    border: 2px solid brown;
+    text-align: center;
+    padding-top: 2rem;
+    list-style: none;
+}
+ul li{
+    margin: 2rem;
+}
+li:nth-child(odd){
+    background-color: rgb(247, 193, 47);
+}
+li:nth-child(2n+0){
+    background-color: lightgreen;
+}
+li:nth-child(5){
+    background-color: orangered;
+}

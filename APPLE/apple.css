@@ -27,4 +27,13 @@ ul{
     font-weight: 400;
 }
 
+.main-photo{
+    position: fixed;
+    background-image: url('/mern-stack/images/apple/15pro.jpg');
+    width: 100%;
+    height: 624px;
+    z-index: -1;
+    
+}
+
 
