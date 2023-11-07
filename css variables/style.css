@@ -1,0 +1,41 @@
+:root{
+    --primary-color: yellow;
+    --danger-color: red;
+    --safe-color: lightgreen;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    width: 50vw;
+    height: 80vh;
+    border: 2px solid red;
+    background-color: bisque;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.box{
+    height: 200px;
+    width: 200px;
+    background-color: brown;
+    border: 2px solid black;
+}
+
+#box1{
+    background-color: var(--primary-color);
+}
+
+#box2{
+    background-color: var(--danger-color);
+}
+
+#box3{
+    background-color: var(--safe-color);
+}

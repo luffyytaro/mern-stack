@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div ul li {
+    color: red;
+}
+
+div > p{
+    color: orangered;
+}
+
+div + p{
+    color: blue;
+}
