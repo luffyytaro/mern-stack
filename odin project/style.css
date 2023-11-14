@@ -11,4 +11,16 @@ nav{
 
 .container{
    display: flex;
+   font-family: Arial, Helvetica, sans-serif;
+   padding: 8px 32px;
+   margin: 0px 28px;
+   top: 0px;
+}
+
+.contents{
+    list-style-type: none;
+    display: flex;
+    margin-left: 0px;
+    align-items: center;
+    text-decoration: none;
 }
