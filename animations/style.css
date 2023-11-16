@@ -40,7 +40,7 @@
     background-color: yellowgreen;
     margin: auto;
     margin-top: 1rem;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     position: relative;
 }
 
