@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    background-color: #541554;
+    padding: 1rem;
+}
+
+.section2{
+    background-color: #541554;
+}
