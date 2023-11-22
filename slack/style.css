@@ -4,16 +4,34 @@
     box-sizing: border-box;
 }
 
-.navbar{
-    background-color: #541554;
-    /* padding: 1rem; */
-    
+.second{
+    color: #541544;
+    border: none;
 }
 
-
-.container-fluid{
-     background-color: #541554;
+.first{
+    border-radius: 8px;
+    font-size: 15px;
 }
- .video{
-    max-width: 700px;
- }
+
+.sub-video video{
+    max-width: 100%;
+}
+
+.luffy{
+    background-color: #f5ede5;
+}
+
+.zoro{
+    max-width: 480px;
+}
+
+.nami{
+    color: #541544;
+    font-weight: bold;
+}
+
+.nami p{
+    max-width: 190px;
+    font-size: 10px;
+}
