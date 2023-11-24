@@ -47,6 +47,9 @@ window.console.log("bike:",bike);
  var car="benz";
  console.log("car:",car);
  console.log("window.car:",window.car);
+ var car;
+ var car="g-wagon";
+ console.log("car:",car);
  }
  console.log("car from outside the block:",car);
 
@@ -62,11 +65,40 @@ window.console.log("bike:",bike);
 {
     let fruit = "apple";
     console.log("fruit:",fruit);
+    console.log("window.fruit:",window.fruit);
+
+    //let fruit; //not possible, cannot redeclare
 
     fruit ="banana";
-    console.log("fruit:",fruit)
+    console.log("fruit:",fruit);
+
+    let food;
+    food="rice";
 }
 
+//console.log("fruit from outside the block:",fruit); //gives error(fruit is not defined)
+
+//const
+/*
+ -does not add to global block
+ -block scoped
+ -cannot redeclare
+ -cannot update later
+ -declaration and initialization must be done in single line;
+ */
+
+ {
+    const place = "new york";
+    console.log("place:",place);
+    console.log("window.place:",place);
+    //const place; //cannot redeclare, gives error
+
+    //place="mumbai"; //not possible to constant variable
+
+    //const country; //missing initialization and declaration
+ }
+
+ //console.log("place from outside the block:",place);  //gives error (fruit is not defined)
 
 
 
