@@ -98,7 +98,69 @@ window.console.log("bike:",bike);
     //const country; //missing initialization and declaration
  }
 
- //console.log("place from outside the block:",place);  //gives error (fruit is not defined)
+ //console.log("place from outside the block:",place);  //gives error (place is not defined)
+
+
+ {
+    let str = "hello,world";
+    let length = str.length;
+    console.log("length:",length);
+
+    let toUpperCase =str.toUpperCase();
+    console.log("toUpperCase:",toUpperCase);
+
+    let toLowerCase =str.toLowerCase();
+    console.log("toLowerCase:",toLowerCase);
+
+    let length1 =str.toUpperCase().toLowerCase().length;
+    console.log("length1:",length1);
+
+    let trimmedString =str.trim();
+    console.log("trimmedString:",trimmedString);
+    let trimmedStringLength =trimmedString.length;
+    console.log("trimmedStringthLength:",trimmedStringLength);
+
+    let leftTrimmedString = str.trimStart();
+    let leftTrimmedStringLength = leftTrimmedString.length;
+    console.log("leftTrimmedString:",leftTrimmedString);
+    console.log("leftTrimmedStringlength:",leftTrimmedStringLength);
+
+    let rightTrimmedString = str.trimEnd();
+    let rightTrimmedStringLength = rightTrimmedString.length;
+    console.log("rightTrimmedString:",rightTrimmedString);
+    console.log("rightTrimmedStringlength:",rightTrimmedStringLength);
+
+    let subString = str.substring(2,5);
+    console.log("subString:",subString);
+
+    let replacedString = str.replace("hello","yo");
+    console.log("replacedString:",replacedString);
+
+    let isStartsWith = str.startsWith("hello");
+    console.log("isStartsWith:",isStartsWith);
+
+    let isEndsWith = str.endsWith("world");
+    console.log("isEndsWith:",isEndsWith);
+
+    let splitString = str.split(',');
+    console.log("splitString:",splitString);
+
+    let joinedArray = splitString.join(' ');
+    console.log("joinedArray:",joinedArray);
+
+    let text = "Apple, Banana, Kiwi";
+    let part = text.slice(-12);
+    console.log("part:",part);
+
+    let text1 = "Luffy,Ace,Sabo"
+    let part1 = text1.slice(5);
+    console.log("part1:",part1);
+
+    
+
+
+ }
+
 
 
 
