@@ -162,6 +162,66 @@ window.console.log("bike:",bike);
  }
 
 
+{
+
+   let arr = [10,20,30,40,50];
+   console.log("arr[2]:",arr[2]);
+
+   console.log("index of :",arr.indexOf(40));
+
+   arr.push("end");   //adds element at the end of an array
+   console.log("push:",arr);
+
+   arr.unshift("start");      //adds element at the start of an array
+   console.log("unshift:",arr);
+
+   arr.pop();               //removes the last element of an array
+   console.log("pop:",arr);
+
+   arr.shift();           //removes first element of an array
+   console.log("shift:",arr);
+
+   arr.splice(2,2);           //(start index,elements to be spliced)
+   console.log("splice:",arr);
+
+   arr.splice(2,0,24,42);      //add elements to the 2nd index of an array
+   console.log("splice:",arr);
+
+   arr[0]=100;             //reassign the 0th index in the array
+   console.log("splice:",arr);
+}
+
+
+{
+   //OBJECTS
+
+   let obj = {
+      firstName :"Roronoa",
+      lastName :"Zoro",
+      Age: 23,
+      Japanese: "true",
+      mark:[50,75],
+      address:{
+         city:"tokyo",
+         street:"kochi",
+         country:"japan",
+      }
+
+   }
+
+   console.log("obj:",obj);
+   // console.log("firstName:",obj.firstName);
+   // console.log("japanese:",obj.Japanese);
+   // console.log("age:",obj.Age);
+
+   // obj.firstName="vinsmoke";
+   // console.log("firstname:",obj.firstName);
+
+   // obj.lastName="sanji";
+   // console.log("lastname:",obj.lastName);
+
+
+}
 
 
 
