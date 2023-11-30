@@ -209,19 +209,115 @@ window.console.log("bike:",bike);
 
    }
 
-   console.log("obj:",obj);
-   // console.log("firstName:",obj.firstName);
-   // console.log("japanese:",obj.Japanese);
-   // console.log("age:",obj.Age);
-
-   // obj.firstName="vinsmoke";
-   // console.log("firstname:",obj.firstName);
-
-   // obj.lastName="sanji";
-   // console.log("lastname:",obj.lastName);
-
+   
 
 }
 
 
+{
+   let a=20;
 
+   if (a==10) {
+      console.log("success");
+   }
+   else if(a==15) {
+      console.log("processing");
+   }
+   else if (a==20) {
+      console.log("done!");
+   }
+   else {
+      console.log("Fail");
+   }
+
+
+}
+
+// {
+//    let num=20;
+//    let preIncrNum =++num;
+//    console.log("preIncrNum:",num);
+
+//    let postIncrNum =num++;
+//    console.log("postIncrNum:",num);
+
+//    let preDecrNum=--num;
+//    console.log("preDecrNum:",num);
+
+//    let postDecrNum=num--;
+//    console.log("postDecrNum:",num);
+
+
+// }
+
+
+{
+   //preIncrement
+    let num1=10;
+    let preIncrNum=++num1;
+    console.log("preIncrNum:",preIncrNum);
+
+    //postIncrement
+    let num2=11;
+    let postIncrNum=num2++;
+    console.log("postIncrNum:",postIncrNum);
+
+    //preDecrement
+    let num3=12;
+    let preDecrNum=--num3;
+    console.log("preDecrNum:",preDecrNum);
+
+    //postDecrement
+    let num4=10;
+    let postDecrNum=num4--;
+    console.log("postDecrNum:",postDecrNum);
+
+
+
+    let num6=10;
+    let num7=10;
+
+    if (num6 == num7) {
+      console.log("both values are equal");
+    }
+    if (num6 === num7) {
+      console.log("both value and their datatypes are equal");
+    }
+    if (num6!=10) {
+      console.log("not 9");
+    }
+
+
+    let day=7;
+
+    switch(day) {
+      case 1:
+         console.log("sunday");
+         break;
+
+      case 2:
+         console.log("monday");
+         break;
+         
+      case 3:
+         console.log("tuesday");
+         break;
+         
+      case 4:
+         console.log("wednesday");
+         break;
+         
+      case 5:
+         console.log("thursday");
+         break;
+         
+      case 6 :
+         console.log("friday");
+         break;
+         
+      case 7:
+         console.log("saturday");
+         break;   
+    }
+
+}
