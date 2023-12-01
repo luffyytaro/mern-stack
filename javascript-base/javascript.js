@@ -321,3 +321,100 @@ window.console.log("bike:",bike);
     }
 
 }
+
+{
+   //LOOPS
+//for 
+//while
+//do-while
+
+for (let i=0;i<10;i++) {
+   console.log("hello world");
+}
+
+let i=0;
+while (i<10) {
+   console.log("hiii");
+   i++;
+}
+
+let j=0;
+do{
+   console.log("welcome bjjs");
+   j++;
+}while(j<10)
+
+for (let i=1;i<=10;i++) {
+   if (i==3) {
+   continue;
+}
+
+if (i==8) {
+   break;
+}
+
+console.log(i);
+}
+
+
+//SUM
+
+let sum =0;
+for (let i=1; i<=10;i++) {
+
+   sum= sum + i;
+}
+console.log("sum:",sum);
+
+
+//PRODUCT
+
+let product =1;
+for (let i=1; i<=10;i++) {
+   product = product*i;
+}
+console.log("product:",product);
+
+let product1 =1;
+let k=1;
+while(k<=10) {
+   product1 =product1 * k;
+   k++;
+}
+console.log("product1:",product1);
+
+
+//FACTORIAL
+
+let fact =1;
+let num =3;
+
+for (let i=num;i>0;i--) {
+   fact = fact * i;
+}
+console.log("factorial:",fact);
+
+
+//FIBONACCI SERIES    (0 1 2 3 5 8 13.....)
+
+console.log('FIBONACCI');
+
+let sum1=0;
+let limit=10;
+let a=0;
+let b=1;
+let l=0;
+
+while(l<=limit) {
+   sum1=sum1+a;
+   console.log(sum1);
+   a=b;
+   b=sum1;
+   l++;
+}
+
+//SUM OF ODD AND EVEN NUMBERS
+console.log("sum of even numbers");
+let 
+}
+
