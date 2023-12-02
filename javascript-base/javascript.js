@@ -443,5 +443,85 @@ for (i=1;i<=10;i++)
 
 }
 
+{
+   let arr =[20,30,10,50,45];
+   let sum =0;
+
+   for(let i=0;i<arr.length;i++) {
+      //i=0 -> sum = sum + arr[i] ->sum = 0 + arr[0] ->sum 0 + 10 =10
+      //....
+      //.....
+
+
+      sum = sum +arr[i];
+   }
+   console.log("sum:",sum);
+
+
+let avg = sum/arr.length;
+console.log("avg:",avg);
+
+
+//TO FIND THE MINIMUM NUMBER
+
+   let min = arr[0];
+   for( i=0;i<=arr.length;i++) {
+      if(arr[i]< min){
+         min =arr[i];
+      }
+   }
+   console.log("minimum:",min);
+
+
+   //TO FIND THE MAXIMUM NUMBER
+
+   let max = arr[0];
+   for( i=0;i<=arr.length;i++) {
+      if(arr[i] > max){
+         max =arr[i];
+      }
+   }
+   console.log("maximum:",max);
+
+
+   //to change negative elements in an array into positive
+
+   let arr1 = [-2,-5,-4,-1];
+
+   for (let i=0;i<arr.length;i++) {
+      if (arr1[i] < 0){
+         arr1[i] = arr1[i]*-1;
+      }
+   }
+   console.log("negative to positive:",arr1);
+
+
+   //program to reverse a string
+   let str ="Aswin";
+   let reverse ='';
+   for(let i=str.length-1;i>=0;i--) {
+
+      //i=5-1 -> i=4 ->reverse = reverse + str[i] -> reverse= '' + str[4] -> reverse ''+'o' o;
+      reverse = reverse + str[i];
+   }
+   console.log("reverse string:",reverse);
+}
+
+{
+   //find the lowercases and convert them into uppercase
+   let arr = ['a','b','C','d','X','z'];
+   let uppercase=[];
+   let lowercase=[];
+
+   for(let i=0;i<arr.length;i++) {
+      uppercase[i]=arr[i].toUpperCase();
+      lowercase[i]=arr[i].toLowerCase();
+   }
+
+
+   console.log("upper:",uppercase);
+   console.log("lower:",lowercase);
+}
+
 
 
