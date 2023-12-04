@@ -523,5 +523,201 @@ console.log("avg:",avg);
    console.log("lower:",lowercase);
 }
 
+{
+   // //Multipication table using nested loops
+
+   for(let i=1; i<=10; i++) {
+      console.log('\n');
+
+      for(j=1; j<=10; j++){
+         console.log(`${i} * ${j} = ${i*j}`)
+      }
+   }
+
+   let string ='';
+   let string1 ='';
+   //string = '*\n**\n***\n'
+
+   for(let i=1;i<=10;i++){
+      for(let j=1;j<=i;j++){
+         string = string +'*';
+         string1 = string1 +'*';
+      }
+      
+      string = string +'\n';
+      string1 = string1 + '<br>';
+   }
+   console.log(string);
+   document.write(string1);
+
+}
+
+{
+//functions
+
+//function definition
+function printHello(){
+   console.log("hello world");
+}
+printHello();
+
+//Named function
+function getAge(){
+   return 22;
+}
+
+let age = getAge();
+console.log("getAge:",age);
+
+//Anonymous function
+let getName = function() {
+   console.log("get name function called");
+   return "Luffy";
+}
+let name = getName();
+console.log("name:",name);
+
+//Arrow function
+
+let getMarks =() => {
+   console.log("arrow function called");
+   return 100;
+}
+
+let mark = getMarks ();
+console.log("mark:",mark);
 
 
+
+
+
+//FUNCTIONS WITH PARAMETERS
+//calling previous mathematical problems in function 
+
+function greeting(message,message1) {
+   console.log("message:",message);
+   console.log("message1:",message1);
+}
+greeting("Pirate","KING");
+
+//calling sum  in function parameter
+function sum(){
+   let sum =0;
+for (let i=1; i<=10;i++) {
+
+   sum= sum + i;
+}
+console.log("sum:",sum);
+
+}
+sum();
+
+//calling fibonacci  in function parameter
+function fibonacci(){
+   console.log('FIBONACCI');
+
+let sum1=0;
+let limit=10;
+let a=0;
+let b=1;
+let l=0;
+
+while(l<=limit) {
+   sum1=sum1+a;
+   console.log(sum1);
+   a=b;
+   b=sum1;
+   l++;
+}
+
+}
+fibonacci();
+
+//calling factorial  in function parameter
+function factorial(num){
+   let fact =1;
+
+
+for (let i=num;i>0;i--) {
+   fact = fact * i;
+}
+console.log("factorial:",fact);
+}
+factorial(7);
+
+
+//Array in function
+
+function array(arr){
+   
+   let sum =0;
+
+   for(let i=0;i<arr.length;i++) {
+      //i=0 -> sum = sum + arr[i] ->sum = 0 + arr[0] ->sum 0 + 10 =10
+      //....
+      //.....
+
+
+      sum = sum +arr[i];
+   }
+   console.log("sum:",sum); 
+}
+let arr =[25,30,10,50,45];
+array(arr);
+
+
+//calling functon in Reverse string
+function reverse(str){
+  
+   let reverse ='';
+   for(let i=str.length-1;i>=0;i--) {
+
+      //i=5-1 -> i=4 ->reverse = reverse + str[i] -> reverse= '' + str[4] -> reverse ''+'o' o;
+      reverse = reverse + str[i];
+   }
+   console.log("reverse string:",reverse);
+}
+let str ="Aswin";
+reverse(str);
+
+
+//calling the count of vowels in a string
+  function vowels(str1){
+   
+   let count = str1.match([aswin]).length;
+
+
+for(let i=0;i<=vowels;i++) {
+
+   result = vowels(string);
+}
+console.log("count:",vowels);
+
+  }
+  let str1 =["aswin"];
+  vowels(str1);
+
+
+   
+
+
+}
+
+
+
+
+// function countVowel(str) { 
+
+//    // find the count of vowels
+//    const count = str.match(/[aeiou]/gi).length;
+
+//    // return number of vowels
+//    return count;
+// }
+
+// // take input
+// const string = prompt('Enter a string: ');
+
+// const result = countVowel(string);
+
+// console.log(result);
