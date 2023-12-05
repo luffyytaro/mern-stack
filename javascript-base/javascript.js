@@ -682,42 +682,146 @@ reverse(str);
 
 
 //calling the count of vowels in a string
-  function vowels(str1){
+//   function vowels(str1){
    
-   let count = str1.match([aswin]).length;
+//    let count = str1.match([aswin]).length;
 
 
-for(let i=0;i<=vowels;i++) {
+// for(let i=0;i<=vowels;i++) {
 
-   result = vowels(string);
-}
-console.log("count:",vowels);
-
-  }
-  let str1 =["aswin"];
-  vowels(str1);
-
-
-   
-
-
-}
-
-
-
-
-// function countVowel(str) { 
-
-//    // find the count of vowels
-//    const count = str.match(/[aeiou]/gi).length;
-
-//    // return number of vowels
-//    return count;
+//    result = vowels(string);
 // }
+// console.log("count:",vowels);
 
-// // take input
-// const string = prompt('Enter a string: ');
+//   }
+//   let str1 =["aswin"];
+//   vowels(str1);
 
-// const result = countVowel(string);
 
-// console.log(result);
+
+}
+
+
+
+//print array of repeating elements 
+{
+   function array(arr){
+      let arr1 =[];
+
+   for(let i=0;i<arr.length;i++){
+      for(let k =i+1;k<=arr.length;k++){
+         if(arr[i]==arr[k]){
+            arr1[i]=arr[i];
+         }
+      }
+      
+   }
+   console.log(arr1);
+}
+let arr =[5,6,5,6,7,4,5];
+array(arr); 
+}
+
+
+{
+   console.log("\n\n");
+
+   function update(a) {
+      a="new value";
+      console.log("from update function a:",a);
+   }
+
+   function updateArr(arr) {
+      arr[2]= "new value";
+   }
+
+   function updateObj(obj) {
+      obj.name ="Law";
+   }
+
+   let a=7;
+   let arr = [1,5,1,5];
+   let obj = {name : "Trafalgar", age : 21};
+
+   
+   //call by value
+   console.log("a before :",a);
+   update(a);
+   console.log("a after update:",a);
+
+   //call by reference
+   console.log("arr before update:",arr);
+   updateArr(arr);
+   console.log("array after update :",arr);
+
+   //call by reference
+   console.log("obj before update:", obj);
+   updateObj(obj);
+   console.log("obj after update:",obj);
+
+
+   //Closure
+   //A function along with its environment
+   function outerFunction() {
+      let greeting = "I'm gonna be KING of THE PIRATES";
+
+      function innerFunction (){
+
+         function innerFunction1(){
+
+            console.log(greeting);
+         }
+         return innerFunction1;
+      }
+      return innerFunction;
+   }
+
+   let result = outerFunction();
+   console.log("result:",result);
+
+
+   let result1 = result();
+   console.log("result1:",result1);
+   result1();
+
+   // let innerFun = function innerFunction(){
+   //    console.log(greeting);
+   // }
+   // console.log("innerFun:",innerFun);
+
+   // // innerFun();
+
+
+
+   //Methods of DOM
+
+   let btn = document.getElementById("btn");
+   console.log("btn:",btn);
+   console.log("button content:",btn.textContent); //textContent or innerHTML
+   
+   let container = document.getElementsByClassName("container");
+   console.log("container:",container);
+
+   console.log("container1:",container[0]);
+   console.log("container1 content :",container[0].textContent);
+   console.log("container2:",container[1]);
+   console.log("container3:",container[2]);
+
+   let para = document.getElementsByTagName("p");
+   console.log("para:",para);
+
+   console.log("paragarph1:",para[0]);
+   console.log("paragraph1 content:",para[0].textContent);
+   console.log("paragarph2:",para[1]);
+   console.log("paragarph3:",para[2]);
+
+   let listItems = document.querySelector(".container #box ul li");
+   console.log("listItems:",listItems);
+   console.log("listItems content:",listItems.textContent);
+   console.log("listItems innerHTML:",listItems.innerHTML);
+
+
+   let btn1 = document.getElementById("btn1");
+   btn1.innerHTML = "CLICK ME";
+
+}
