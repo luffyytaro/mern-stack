@@ -1,5 +1,5 @@
 console.log('hello javascript,from external javascript...')
-document.write("from javascript");
+// document.write("from javascript");
 
 
 var a;
@@ -548,7 +548,7 @@ console.log("avg:",avg);
       string1 = string1 + '<br>';
    }
    console.log(string);
-   document.write(string1);
+   
 
 }
 
@@ -816,13 +816,128 @@ array(arr);
    console.log("paragarph2:",para[1]);
    console.log("paragarph3:",para[2]);
 
-   let listItems = document.querySelector(".container #box ul li");
-   console.log("listItems:",listItems);
-   console.log("listItems content:",listItems.textContent);
-   console.log("listItems innerHTML:",listItems.innerHTML);
+   // let listItems = document.querySelector(".container #box ul li");
+   // console.log("listItems:",listItems);
+   // console.log("listItems content:",listItems.textContent);
+   // console.log("listItems innerHTML:",listItems.innerHTML);
 
 
-   let btn1 = document.getElementById("btn1");
-   btn1.innerHTML = "CLICK ME";
+   // let btn1 = document.getElementById("btn1");
+   // btn1.innerHTML = "CLICK ME";
 
+}
+
+
+{
+   console.log("\n\n\n");
+   //EVENT LISTERNERS
+
+   let btn =document.getElementById('btn');
+   console.log("btn:",btn);
+
+   let inp =document.getElementById('inp');
+   console.log("inp:",inp);
+
+   btn.addEventListener('click', function(){
+      alert("Button Clicked");
+   });
+
+   btn.addEventListener("mouseover", function(){
+      console.log("mouseover event fired....");
+   });
+
+   btn.addEventListener("mouseout", function(){
+      console.log("mouseout event fired...");
+   });
+
+   btn.addEventListener("mousedown",function(){
+      console.log("mousedown event fired..");
+   });
+
+   btn.addEventListener("mouseup",function(){
+      console.log("mouseup event fired...");
+   });
+
+   btn.addEventListener("mousemove",function(){
+      console.log("mousemove event fired...");
+   });
+
+   inp.addEventListener("keydown",function(){
+      console.log("keydown event fired..");
+   });
+
+   inp.addEventListener("keyup",function(){
+      console.log("keyup event fired..");
+   });
+
+
+   console.log("\n\n");
+   //MATH FUNCTIONS
+   console.log("Math.sqrt(64):",Math.sqrt(64));//8
+   console.log("Math.round(9.9):",Math.round(9.9));//10
+   console.log("Math.round(9.1):",Math.round(9.1));//9
+   console.log("Math.ceil(10.6):",Math.ceil(10.6));//11
+   console.log("Math.floor(10.7):",Math.floor(10.7));//10
+   console.log("Math.abs(-6):",Math.abs(-6));//6
+   console.log("Math.abs(6):",Math.abs(6));//6
+   console.log("Math.PI:",Math.PI);//3.14
+   console.log("Math.max(66,77,54):",Math.max(66,77,54));//77
+   console.log("Math.min(33,44,22,33):",Math.min(33,44,22,33));//22
+   console.log("Math.pow(3,4):",Math.pow(3,4));//81
+
+
+
+   //TIMER
+   // setTimeout(function(){
+   //    alert("set")
+   //    console.log("from setTimeOut...");
+   // },2000);
+
+   // setInterval(function(){
+   //    console.log("from setInterval...");
+   // },3000);
+
+   //CALLBACK
+   function printHello(callback) {
+      console.log("callback:",callback);
+      callback();
+      console.log("hello..");
+   }
+
+   let callback = function() {
+      console.log("callback function...");
+   };
+   printHello(callback);  
+
+}
+
+{
+   //PROGRAM TO PRINT CURRENT TIME
+
+   function putZero(value) {
+      return value<10?"0"+value:value;
+   }
+
+   function show() {
+      var time = document.getElementById("time");
+      console.log("time:",time);
+      var dt = new Date();
+      console.log("date:",dt);
+      var hours = dt.getHours();
+      var minutes = dt.getMinutes();
+      var seconds = dt.getSeconds();
+      //if(hours >12) {
+         //return "pm"
+         //
+      //}else {
+         //return "am"
+      //}
+      var ampm = hours>12?"pm":"am";
+      time.innerHTML = putZero(hours%12) + ":" + putZero(minutes) + ":" + putZero(seconds) + ampm;
+
+      setTimeout(function(){
+         show();
+      },1000);
+   }
+   show();
 }
