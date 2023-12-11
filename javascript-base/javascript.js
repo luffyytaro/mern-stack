@@ -914,30 +914,203 @@ array(arr);
 {
    //PROGRAM TO PRINT CURRENT TIME
 
-   function putZero(value) {
-      return value<10?"0"+value:value;
-   }
+   // function putZero(value) {
+   //    return value<10?"0"+value:value;
+   // }
 
-   function show() {
-      var time = document.getElementById("time");
-      console.log("time:",time);
-      var dt = new Date();
-      console.log("date:",dt);
-      var hours = dt.getHours();
-      var minutes = dt.getMinutes();
-      var seconds = dt.getSeconds();
-      //if(hours >12) {
-         //return "pm"
-         //
-      //}else {
-         //return "am"
-      //}
-      var ampm = hours>12?"pm":"am";
-      time.innerHTML = putZero(hours%12) + ":" + putZero(minutes) + ":" + putZero(seconds) + ampm;
+   // function show() {
+   //    var time = document.getElementById("time");
+   //    console.log("time:",time);
+   //    var dt = new Date();
+   //    console.log("date:",dt);
+   //    var hours = dt.getHours();
+   //    var minutes = dt.getMinutes();
+   //    var seconds = dt.getSeconds();
+   //    //if(hours >12) {
+   //       //return "pm"
+   //       //
+   //    //}else {
+   //       //return "am"
+   //    //}
+   //    var ampm = hours>12?"pm":"am";
+   //    time.innerHTML = putZero(hours%12) + ":" + putZero(minutes) + ":" + putZero(seconds) + ampm;
 
-      setTimeout(function(){
-         show();
-      },1000);
+   //    setTimeout(function(){
+   //       show();
+   //    },1000);
+   // }
+   // show();
+}
+
+
+{
+   //SPREAD OPERATOR
+
+   let arr = [1,2,3,4,5];
+   console.log("arr:",arr);
+
+   let arr_cont = [...arr,6,7];
+   console.log("arr_cont:",arr_cont);
+
+
+   let obj = {
+      firstName : "mike",
+      lastName  : "curry"
    }
-   show();
+   console.log("obj:",obj);
+
+   let obj_cont = {
+      ...obj,
+      age: 40
+   }
+   console.log("obj_cont:",obj_cont);
+}
+
+{
+   //DESTRUCTURE
+   let arr = [1,2,3,4,5];
+   console.log("arr:",arr);
+
+   let [a,s,w,i,n] = arr;
+   console.log("a:",a);
+   console.log("s:",s);
+   console.log("w:",w);
+   console.log("i:",i);
+   console.log("n:",n);
+}
+
+{
+   //NESTED DESTRUCTURE
+
+   let matrix = [
+      [1,2,3],
+      [4,5,6],
+      [7,8,9]
+   ];
+   console.log("matrix:",matrix);
+
+   let [row1,row2,row3] = matrix;
+   console.log("row1:",row1);
+   console.log("row2:",row2);
+   console.log("row3:",row3);
+
+   let [a,b,c] = row1;
+   let [d,e,f] = row2;
+   let [g,h,i] = row3;
+
+   console.log("a:",a);
+   console.log("b:",b);
+   console.log("c:",c);
+   console.log("d:",d);
+   console.log("e:",e);
+   console.log("a:",a);
+   console.log("a:",a);
+
+
+
+
+   let obj = {
+      firstName: "miyamoto",
+      lastName: "mushashi",
+      age: 22,
+      address: {
+         street: "kyoto",
+         city: "tokyo",
+         pincode: 2233,
+      }
+   }
+   console.log("obj:",obj);
+
+
+   let {firstName, lastName, age, address: {street, city,pincode}} = obj;
+
+   console.log("firstName:",firstName);
+   console.log("lastName:",lastName);
+   console.log("age:",age);
+   console.log("street:",street);
+   console.log("city:",city);
+   console.log("pincode:",pincode);
+
+
+}
+
+{
+   //example for spread operator
+   let arr1 = [1,2,3,4,5];
+   console.log("arr1:",arr1);
+
+   let arr2 = [6,7,8,9,10];
+   console.log("arr2:",arr2);
+   
+   let arr3 = [...arr1,...arr2]
+   console.log("combined array:",arr3);
+
+
+
+   let obj = {
+      firstName: "aswin",
+      lastName: "cs",
+      age: 22,
+      address: {
+         street: "kyoto",
+         city: "tokyo",
+         pincode: 2233,
+      }
+   }
+   console.log("obj:",obj);
+
+   let obj1 = {
+      ...obj,
+      hobby: "playing",
+      car: "skyline",
+   }
+   console.log("obj2:",obj1);
+
+   let obj3 = {
+      ...obj,
+      ...obj1,
+   }
+   console.log("combined obj:",obj3);
+}
+
+
+{
+   //ARRAY METHODS
+
+   let arr = [
+      {name : "aswin", mark : 100, place : "chalakudy"},
+      {name : "arjun", mark : 98, place : "kochi"},
+      {name : "anvar", mark : 99, place : "thrissur"},
+      {name : "amith", mark : 99, place : "adoor"},
+   ];
+   
+   //ForEach
+   arr.forEach((element,index)=>{
+      console.log("index:",index);
+      console.log("elements:",element);
+   })
+
+   //FIND
+   let findResult = arr.find((element)=>{
+      return element.name =="aswin";
+   });
+   console.log("findResult:",findResult);
+
+   //filter
+   let filterResult = arr.filter((element,index)=>{
+      return element.mark ==99;
+   });
+   console.log("filterResult:",filterResult);
+
+   //MAP
+   let mapResult = arr.map((element)=>{
+      return element.name;
+   });
+   console.log("mapREsult:",mapResult);
+
+   //reduce
+   let totalMarks = arr.reduce((total,element)=>{
+      return total + element.mark;
+   },0);
+   console.log("total marks:",totalMarks);
 }
