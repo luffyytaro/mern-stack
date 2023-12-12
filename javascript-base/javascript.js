@@ -1114,3 +1114,119 @@ array(arr);
    },0);
    console.log("total marks:",totalMarks);
 }
+
+let person = {
+   firstName : "aswin",
+   lastName : "cs",
+   age : 22,
+   getAge : function () {
+      console.log(`age of ${this.firstName} is ${this.age}`);
+   }
+}
+
+person.getAge();
+
+console.log("this:",this);
+
+function greet(message1,message2) {
+   console.log(`${message1} and ${message2} ${this.firstName}`);
+}
+
+// greet("hi");
+// greet.call(person,"hi","hello");
+// greet.apply(person,["hi","hello"]);
+
+let bindedResult = greet.bind(person,"hi","ola");
+console.log(bindedResult());
+
+{
+   //CONSTRUCTOR FUNCTION
+   function person(name,age,mark) {
+      this.name = name;
+      this.age = age;
+      this.mark = mark ;
+
+      this.greeting = function() {
+         console.log(`hai ${this.name}, your mark is ${this.mark}`);
+      }
+   }
+   let person1 = new person("hari",19,50);
+   console.log("person:",person1);
+   person1.greeting();
+
+
+   person.prototype.getAgeAndMark = function() {
+      console.log(`hello ${this.name}, your age is ${this.age} and your mark is ${this.mark}`);
+   }
+   person1.getAgeAndMark();
+}
+
+{
+   //CLASS
+
+   class person {
+      name;
+      age;
+      mark;
+
+      constructor(name,age,mark) {
+         this.name = name;
+         this.age = age;
+         this.mark = mark;
+      }
+      greeting() {
+         console.log(`hai ${this.name}`);
+      }
+   }
+
+   let person1 = new person ("john",22,49);
+   console.log("person1:",person1);
+   person1.greeting();
+
+   let person2 = new person ("ajay",22,44);
+   console.log("person2:",person2);
+   person2.greeting();
+
+   person.prototype.getAgeAndMark = function () {
+      console.log(`hello ${this.name},your age is ${this.age} and your mark ${this.mark}`);
+   }
+
+   person1.getAgeAndMark();
+   person2.getAgeAndMark();
+
+
+   class Animal {
+      name;
+
+      constructor(name) {
+         this.name = name;
+      }
+
+      printName() {
+         console.log(`Animal is ${this.name}`);
+      }
+   }
+
+   let myAnimal = new Animal("cheetah");
+   console.log("myAnimal:",myAnimal);
+   myAnimal.printName();
+
+
+   //inheritence
+   class Dog extends Animal {
+      color;
+      constructor(name,color) {
+         super(name);//calls parent constructor
+         this.color = color
+      }
+
+      printColor() {
+         console.log(`color of ${this.name} is ${this.color}`)
+      }
+
+   }
+   let myDog = new Dog("luffy","blue");
+   console.log("myDog:",myDog);
+   myDog.printName();
+   myDog.printColor();
+}
