@@ -1230,3 +1230,110 @@ console.log(bindedResult());
    myDog.printName();
    myDog.printColor();
 }
+
+{
+   class Car {
+      name;
+
+      constructor(name) {
+         this.name = name;
+      }
+
+      printName() {
+         console.log(`Car is ${this.name}`);
+      }
+   }
+
+   let myCar = new Car("Nissan-GTR");
+   console.log("myCar:",myCar);
+   myCar.printName();
+
+
+
+   class Jeep extends Car {
+      color;
+      constructor(name,color) {
+         super(name);
+         this.color = color
+      }
+
+      printColor() {
+         console.log(`color of ${this.name} is ${this.color}`)
+      }
+
+   }
+   let myJeep = new Jeep("G-Wagon","Black");
+   console.log("myJeep:",myJeep);
+   myJeep.printName();
+   myJeep.printColor();
+}
+
+
+
+   class MyButton {
+      button;
+
+      constructor(content) {
+         this.button = document.createElement('button');
+         this.button.innerHTML = content;
+         document.body.appendChild(this.button);
+      }
+
+      set width(width) {
+         this.button.style.width = width + "px";
+      }
+
+      set height(height) {
+         this.button.style.height = height + "px";
+      }
+
+
+      get width() {
+         return this.button.style.width;
+      }
+
+      get height() {
+         return this.button.style.height;
+      }
+
+      onClick(fn) {
+         this.button.onclick = fn;
+      }
+   }
+
+   let myButton = new MyButton('click here');
+   console.log("myButton:",myButton);
+   
+   myButton.width = 100;
+   myButton.height = 80;
+  
+   console.log("myButton width:",myButton.width);
+   console.log("myButton height:",myButton.height);
+
+
+   myButton.onClick(function() {
+      console.log("BUTTON CLICKED....");
+   });
+
+
+   class RedButton extends MyButton {
+      onClick(fn) {
+         this.button.onclick = function () {
+            fn();
+            this.button.style.background = "red";
+         }.bind(this);
+      }
+   }
+
+   let myRedButton = new RedButton("Red Button");
+
+   myRedButton.width = 200;
+   myRedButton.height = 200;
+
+   console.log("myRedButton width:", myRedButton.width);
+   console.log("myRedButton height:",myRedButton.height);
+
+
+   myRedButton.onClick(function() {
+      console.log("RED button clicked....");
+   });
