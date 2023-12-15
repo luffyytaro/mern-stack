@@ -4,3 +4,9 @@
     margin-left: 80px;
     justify-content: center;
 }
+
+
+#table ,td,th{
+border: 2px solid rgb(13, 14, 13);
+
+}
