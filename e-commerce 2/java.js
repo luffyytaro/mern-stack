@@ -15,7 +15,7 @@ let xhr = new XMLHttpRequest();
     console.log("readystate", xhr.readyState);
     console.log("statusCode:", xhr.status);
 
-    let content = document.getElementById('content');
+    let content = document.getElementById('section');
 
     if (xhr.readyState==4) {
         if(xhr.status==200) {
@@ -31,13 +31,18 @@ let xhr = new XMLHttpRequest();
             datas = '';
             for(let i=0;i<parsed_response.length;i++) {
                 datas=datas+ `
-                <tr>
-                <td>${parsed_response[i].id}</td>
-                <td>${parsed_response[i].title}</td>
-                <td>${parsed_response[i].price}</td>
-                <td>${parsed_response[i].description}</td>
-                <td><img src=" ${parsed_response[i].image}" alt=""></td>
-                <tr/>
+
+                <p>${parsed_response[i].id}</p>
+                <p>${parsed_response[i].title}</p>
+                <p>${parsed_response[i].price}</p>
+                <p>${parsed_response[i].description}</p>
+                <p>${parsed_response[i].category}</p>
+                <p><img src=" ${parsed_response[i].image}" alt="" width="100px" height="100px"></p>
+                <p>${parsed_response[i].rating}</p>
+                <p>${parsed_response[i].rate}</p>
+                <p>${parsed_response[i].count}</p>
+                
+                
                 `
             }
 

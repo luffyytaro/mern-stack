@@ -1,0 +1,14 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container .home {
+   border: 1px solid black;
+   display: flex;
+}
+
+#section{
+    display: flex;
+}
