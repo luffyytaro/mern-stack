@@ -32,15 +32,15 @@ let xhr = new XMLHttpRequest();
             for(let i=0;i<parsed_response.length;i++) {
                 datas=datas+ `
 
-                <p>${parsed_response[i].id}</p>
+               
                 <p>${parsed_response[i].title}</p>
                 <p>${parsed_response[i].price}</p>
-                <p>${parsed_response[i].description}</p>
+                
                 <p>${parsed_response[i].category}</p>
                 <p><img src=" ${parsed_response[i].image}" alt="" width="100px" height="100px"></p>
                 <p>${parsed_response[i].rating}</p>
                 <p>${parsed_response[i].rate}</p>
-                <p>${parsed_response[i].count}</p>
+                
                 
                 
                 `
@@ -55,3 +55,9 @@ let xhr = new XMLHttpRequest();
         console.log("state not completed");
     }
  }
+
+
+
+//  <p>${parsed_response[i].id}</p>
+// <p>${parsed_response[i].description}</p>
+// <p>${parsed_response[i].count}</p>
