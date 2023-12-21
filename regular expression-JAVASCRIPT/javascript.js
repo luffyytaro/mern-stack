@@ -172,7 +172,7 @@ function checkResult(value) {
     if (result) {
         return '';
     } else {
-        return 'Invaild String';
+        return'Invaild String';
     }
 }
 
@@ -190,4 +190,144 @@ function onChange(arg) {
         label.innerHTML = validation_result;
     }
 }
+
+
+//'^' and '$' can only be used in the start and end of a string amd cannot be used in between strings to match, so we can use lookaheads for giving startin and ending in between strings
+
+//(?=) - Positive Lookahead, A(?=B) -> Matches: A only if A is followed by B
+//(?!) - Negative Lookahead, A(?!B) -> Matches: A only if A is not followed by B
+//(?<=) - Positive Lookbehind, (?<=B)A -> Matches: A only if A is preceded by B
+//(?<!) - Negative Lookbehind, (?<!B)A -> Matches: A only if A is not preceded by B
+
+{
+    let dateString = '19-12-2023';
+
+    let regex = /-\d+-/; //it will match also '-12-' in result and gives as result array
+
+    const result = dateString.match(regex);
+    console.log("result:",result);
+
+    //Inorder to match exactly '12' in dateString we can use lookaheads
+    let regex1 = /(?<=-)\d+(?=-)/; //this will exactly match '12' in string
+    const result1 = dateString.match(regex1);
+    console.log("result1:",result1);
+
+    //Example for Negative Lookahead and Negative Lookbehind
+    let phone = "(91)9988776655";
+
+    //To match numbers outside of (91)
+    const phoneRegex = /(?<!\()\d+(?!\))/;
+    const phoneRegexResult = phone.match(phoneRegex);
+    console.log("phoneREgexResult:",phoneRegexResult);
+ }
+
+ {
+    function findUser(userId) {
+        let userInfo = [
+            {
+                id: 1,
+                name: "ASWIN",
+                age: 22,
+            },
+            {
+                id: 2,
+                name: "LUFFY",
+                age:19,
+            }
+        ];
+        let user = userInfo.find((element)=>element.id ==userId);
+        return user;
+
+    }
+    let user = findUser(1);
+    console.log("user:",user);
+
+
+
+    function findUser1(userId) {
+        let userInfo = [
+            {
+                id: 1,
+                name: "ASWIN",
+                age: 22,
+            },
+            {
+                id: 2,
+                name: "LUFFY",
+                age:19,
+            }
+        ];
+        setTimeout(() => {
+            let user = userInfo.find(()=>userInfo.id ==userId);
+        return user;
+        },500);
+        
+
+    }
+    let user1 = findUser1(1);
+    console.log("user1:",user1);
+
+
+    //Using Promises
+    function findUser2(userId) {
+        return new Promise((resolve,reject) => {
+            //console.log("userId:",userId);
+
+            //Invoking an asynchronous operation
+            setTimeout(() => {
+                let userInfo = [ {
+                    id: 1,
+                    name: "ASWIN",
+                    age: 22,
+                },
+                {
+                    id: 2,
+                    name: "LUFFY",
+                    age:19,
+                }];
+                let user = userInfo.find((element) => element.id ===userId);
+
+                if (user) {
+                    resolve(user);
+
+                } else {
+                    reject("user not found");
+
+                }
+
+            },3000);
+        });
+    }
+
+    // findUser2(3)
+    // .then((user) => {
+    //     //when resolved
+    //     console.log("\n\n");
+    //     console.log("user:",user);
+    //     console.log(user.name);
+    // })
+    // .catch((error) => {
+    //     //when rejected
+    //     console.log("\n\n");
+    //     console.log("error:",error);
+    // })
+    // .finally(() => {
+    //     console.log("Experiment completed");
+    // })
+
+    async function getUserData() {
+        
+        try {
+            let userData = await findUser2(3);
+        console.log("userData:",userData);
+
+        } catch (error) {
+            console.log("Error:", error.message?error.message:error);
+
+        }finally {
+            console.log("completed");
+        }
+    }
+    getUserData();
+ }
 
