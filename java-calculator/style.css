@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+table{
+    border: 2px solid black;
+    margin: auto;
+}
+
+#button{
+    width: 100%;
+    font-size: large;
+    font-weight: bold ;
+    font-size: 40px;
+}

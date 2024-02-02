@@ -29,10 +29,37 @@
 // }
 
 
+// let input = promt("bcsjab");
+
+let todos = [];
+
 function add() {
-    let text = document.getElementById("test1").value;
-    
-    document.getElementById("list").innerHTML +=`<li>${text}</li>`;
+    let todo = document.getElementById("test1").value;
+    todos.push(todo);
+    print();
+}
+
+function print(){
+    document.getElementById("list").innerHTML ="";
+    todos.forEach((item,index) =>{
+        let li= `<li>${item}
+        <button onclick="del(${index})">delete</button>
+        <button onclick="edit(${index})">edit</button>
+        </li>`;
+        document.getElementById("list").innerHTML +=li;
+    })
+}
+
+function del(index) {
+    todos = todos.filter((item,ind) =>index != ind);
+    print();
+}
+
+function edit(index) {
+    let newTodo = prompt("enter new todo:");
+    todos[index] = newTodo;
+    // todos = todos.map((item,ind) =>index == ind? newTodo :item);
+    print();
 }
 
 
