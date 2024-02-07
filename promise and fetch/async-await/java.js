@@ -1,5 +1,4 @@
 
-let list = document.getElementById("list");
 
 // fetch("https://dummyjson.com/products")
 //     .then(res => res.json())
@@ -22,9 +21,16 @@ let list = document.getElementById("list");
 
 //     .catch(error => console.log(error));
 
-    async function getData () {
-        let res = await fetch("https://dummyjson.com/products");
-        let data = await res.json();
+
+let list = document.getElementById("list");
+
+async function getData() {
+
+    let res = await fetch("https://dummyjson.com/products");
+    let data =await (res => res.json())
+    
+ 
+        
         data.products.forEach(item => {
             let li =
                 `<li>
@@ -38,7 +44,9 @@ let list = document.getElementById("list");
 
 
         })
-        return data;
-    }
-    getData();
+    )
 
+    .catch(error => console.log(error));
+    return data;
+    
+}
