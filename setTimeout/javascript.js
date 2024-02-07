@@ -5,25 +5,38 @@
     
 //     clearTimeout(timeout);
     
-    let interval = setInterval(()=>{
-        console.log("interval");
-    },1000);
+//     let interval = setInterval(()=>{
+//         console.log("interval");
+//     },1000);
     
-    setTimeout(()=>{
+//     setTimeout(()=>{
     
-        clearInterval(interval);
-    },5000);
-//
+//         clearInterval(interval);
+//     },5000);
+// //
 
 
 
 // let i=0;
-// setInterval(() => {
+// let interval=setInterval(() => {
 //     console.log(i++)
 // },1000);
 
 //  setInterval(()=>{
-//     clearInterval(i);
+//     clearInterval(interval);
 //  },4000);
+
+   
+   }
+
+
+{
+   
+
+   let  date = new Date();
+   document.getElementById("data").innerHTML = date;
+   
+ 
 }
+
 
