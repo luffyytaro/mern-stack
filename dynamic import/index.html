@@ -10,9 +10,12 @@
         <input type="number" id="screen1">
         <input type="number" id="screen2">
         <!-- <input type="button" id="button" value="*" onclick="display.value +='*'"> -->
-        <button></button>
-        <button></button>
-        <button></button>
+        <button id="btn" onclick="display.value +='+'">+</button>
+        <button id="btn" onclick="display.value +='-'">-</button>
+        <button id="btn" onclick="display.value +='*'">*</button>
+        <button id="btn" onclick="display.value +='%'">%</button>
+        <input type="button" id="button" value="=" onclick="display.value = eval(display.value)">
+        <input type="number" id="result" onclick="display.value = eval(display.value)">
     </div>
     
 
