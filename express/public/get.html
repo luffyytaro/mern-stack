@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="setData(event)">
+        <input type="text" name="username" placeholder="username">
+        <input type="email" name="email" placeholder="email">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit" value="send">
+
+    </form>
+
+    <script>
+
+        async function setData(event) {
+            event.preventDefault();
+            let username = event.target[0].value;
+            let email = event.target[1].value;
+            let password = event.target[2].value;
+            let res = await fetch(`/api/get-data?username=${username}&email=${email}&password=${password}`);
+            let responseData = await res.text();
+            alert(responseData);
+            // print();
+        }
+
+        
+
+        // async function print() {
+        //     let list = document.querySelector("get-data");
+        //     let res = await fetch("/get-data");
+        //     let data = await res.json();
+        //     list.innerHTML = "";
+        //     data.forEach(item => {
+        //         let li = `<li>${item.username} & ${item.email} & ${item.password}</li>`;
+        //         list.innerHTML += li;
+        //     })
+        //     console.log(data);
+        //     print();
+        // }
+    </script>
+</body>
+</html>
