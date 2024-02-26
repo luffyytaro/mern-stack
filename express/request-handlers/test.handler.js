@@ -7,3 +7,5 @@ export function postData(req,res) {
     console.log(req.body);
     return res.end("data obtained");
 }
+
+

@@ -9,9 +9,11 @@ app.use(express.urlencoded({
     extended:true
 }));
 
+
 app.use("/api", router);
 
 app.listen(4000,error =>{
     if(error) console.log(error);
     console.log("server started");
 });
+
