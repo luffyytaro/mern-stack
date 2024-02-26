@@ -19,16 +19,62 @@ router.route("/").get((req,res) =>{
 
 
 router.route("/1").get((req,res)=>{
-    
-})
+    let username = 
+    fs.readFile("./username.json","utf-8",(error,data) =>{
+        let username = data?JSON.parse(data) : [];
+        username.push();
+        fs.writeFile("./username.json",JSON.stringify(username),()=>{
+            res.json();
+        })
+    })
+});
+
+router.route("/4").get((req,res)=>{
+    let password = 
+    fs.readFile("./username.json","utf-8",(error,data) =>{
+        let password = data?JSON.parse(data) : [];
+        password.push();
+        fs.writeFile("./username.json",JSON.stringify(password),()=>{
+            res.json();
+        })
+    })
+});
 
 
+
+router.route("/3").get(middle,(req,res) => res.send("authorized"));
+router.route("/5").get(middle,(req,res) => res.send("authorized"));
 
 router.route("/2").get(mw,(req,res) => res.send("authorized"));
 router.route("/get-data").get(getData);
 router.route("/post-data").post(postData);
 
 export default router;
+
+
+
+function middle(req, res, next){
+    let {id} = req.query;
+    fs.readFile("./username.json","utf-8", (error,data) =>{
+        let username = data? JSON.parse(data) :[];
+        if (username.includes(String(id))) {
+            return next();
+        }
+        res.send("unauthorized access")
+    })
+}
+
+function middleware(req, res, next){
+    let {id} = req.query;
+    fs.readFile("./username.json","utf-8", (error,data) =>{
+        let password = data? JSON.parse(data) :[];
+        if (password.includes(String(id))) {
+            return next();
+        }
+        res.send("unauthorized access")
+    })
+}
+
 
 function mw(req, res, next){
     let {id} = req.query;
