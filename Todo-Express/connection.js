@@ -5,4 +5,4 @@ async function connect(){
     console.log("DATABASE CONNECTED");
 }
 
-export default connect();
+export default connect;

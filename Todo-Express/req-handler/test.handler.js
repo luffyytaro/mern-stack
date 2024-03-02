@@ -1,8 +1,8 @@
-import todoModel from  "./model/todoModel.js";
+import todoModel from  "../model/todo.model.js";
 
 export async function setTodo(req, res){
     try {
-        let {todo} = res.body;
+        let {todo} = req.body;
         if(!todo) return res.status(400).json({msg:"todo cannot be empty"});
         await todoModel.create({text: todo, completed: false});
         return res.status(201).json({msg:"todo added successfully"});
@@ -24,7 +24,7 @@ export async function getTodo(req, res){
 
 export async function editTodo(req, res){
     try {
-        let {newTodo,id} = res.body;
+        let {newTodo,id} = req.body;
         if(!newTodo||!id) return res.status(400).json({msg:"invalid parameters"});
         await todoModel.updateOne({_id:id},{text: newTodo});
         return res.status(201).json({msg:"todo edited successfully"});
@@ -38,7 +38,7 @@ export async function editTodo(req, res){
 
 export async function delTodo(req, res){
     try {
-        let {id} = res.body;
+        let {id} = req.body;
         if(!id) return res.status(400).json({msg:"id must be provided"});
         await todoModel.deleteOne({_id: id});
         return res.status(201).json({msg:"todo deleted successfully"});
