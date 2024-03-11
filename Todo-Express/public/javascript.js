@@ -1,6 +1,8 @@
 function addDetail() {
-    let input = document.querySelector("#LOGIN");
-    let LOGIN = input.value;
+    let username = document.querySelector("#username").value;
+    let email = document.querySelector("#email").value;
+    let password = document.querySelector("#password").value;
+    
     
     fetch("/api/register", {
         method: "post",
@@ -13,8 +15,10 @@ function addDetail() {
     .then(res=> res.json())
     .then(data =>{
         // input.value = "";
-        print();
-        alert("error occured");
+        // print();
+        console.log(data);
+        location.href = "/login.html"
+        alert("successful registration");
     })
     .catch(error =>{
         console.log(error);
