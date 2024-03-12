@@ -12,16 +12,19 @@ function addDetail() {
         body: JSON.stringify({username, email, password})
     })
 
-    .then(res=> res.json())
+    .then(res=> {
+        if (res.status == 201) location.href = "/login.html"
+        return res.json()
+    })
     .then(data =>{
         // input.value = "";
         // print();
         console.log(data);
-        location.href = "/login.html"
-        alert("successful registration");
+        // location.href = "/login.html"
+        alert(data.msg);
     })
     .catch(error =>{
         console.log(error);
-        alert("couldn't add todo");
+        alert("authorization failed");
     });
 }

@@ -14,10 +14,10 @@ function addLogin() {
     .then(data =>{
         // input.value = "";
         console.log(data);
-        alert("user found");
+        alert(data.msg);
     })
     .catch(error =>{
         console.log(error);
-        alert("couldn't add details");
+        alert("user not found");
     });
 }
