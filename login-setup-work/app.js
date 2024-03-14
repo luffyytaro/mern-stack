@@ -6,7 +6,9 @@ import router from "./router.js";
 
 const server = express();
 dotenv.config();
-server.use(express.json());
+server.use(express.json({
+    limit: "5mb"
+}));
 server.use(express.static("./public"));
 server.use("/api", router);
 

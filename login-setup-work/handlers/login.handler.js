@@ -51,5 +51,12 @@ export async function login(req, res) {
 }
 
 export async function pd(req, res) {
-    res.json({ msg: "private data" })
+    try {
+        let {userId} = req.user;
+        let result = await loginModel.findOne({_id: userId},{password: 0});
+        return res.json({msg: "private data", user: result})
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ msg: "some error occured" });
+    }
 }
