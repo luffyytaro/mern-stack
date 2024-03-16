@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+</head>
+
+<body>
+    <main>
+        <img src="" alt="profile" width="500">
+        <h3>Username:</h3>
+        <h4>E-mail:</h4>
+        <button onclick="logout()">logout</button>
+    </main>
+    <h1>Create post</h1>
+    <form onsubmit="addPost(event)">
+        <input type="file" name="image"><br>
+        <input type="text" name="title" placeholder="title"><br>
+        <input type="text" name="des" placeholder="description"><br>
+        <input type="submit" value="post">
+    </form>
+
+    <a href="/post.html">view posts</a>
+    <script>
+        let token = localStorage.getItem("token");
+        if (!token) location.href = "/signIn.html";
+        function addPost(event) {
+            event.preventDefault();
+            let formData = new FormData(event.target);
+            fetch("/api/add-post", {
+                method: "post",
+                headers: {
+                    authorization: `Bearer ${token}`
+                },
+                body: formData
+            })
+                .then(res => res.json())
+                .then(data => {
+                    alert(data.msg);
+                })
+                .catch(error => {
+                    console.log(error);
+                    alert("Couldn't post")
+                })
+        }
+
+
+
+        fetch("/api/private-data", {
+            headers: {
+                authorization: `Bearer ${token}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                document.querySelector("img").src = data.user.profile;
+                document.querySelector("h3").textContent += data.user.username;
+                document.querySelector("h4").textContent += data.user.email;
+            })
+        function logout() {
+            localStorage.removeItem("token");
+            location.href = "/signIn.html";
+        }
+    </script>
+</body>
+
+</html>

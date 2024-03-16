@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signIn</title>
+</head>
+
+<body>
+    <h1>SIGN-IN</h1>
+    <form onsubmit="signIn(event)">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit" value="login">
+    </form>
+
+    <script>
+        async function signIn(event) {
+            event.preventDefault();
+            let username = event.target[0].value;
+            let password = event.target[1].value;
+            fetch("/api/signIn", {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    username,
+                    password,
+                })
+            })
+                .then(res => {
+                    if (res.status == 200) location.href = "/home.html"
+                    return res.json();
+                }).then(data => {
+                    alert(data.msg);
+                    localStorage.setItem("token", data.token);
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.log(error);
+                    alert(error);
+                })
+        }
+    </script>
+</body>
+
+</html>
