@@ -60,3 +60,21 @@ export async function pd(req, res) {
         return res.status(500).json({ msg: "some error occured" });
     }
 }
+
+export async function work(req, res) {
+    try {
+        let { username, email, password , profile} = req.body;
+        console.log(password.length < 4);
+        if ((username.length < 4) || !email || (password.length < 4)) {
+            return res.status(400).json({ msg: "fields cannot be empty" });
+        }
+        let userExist = await loginModel.findOne({ username });
+        if (userExist) return res.status(400).json({ msg: "username already exist" });
+        let hashedPass = await bcrypt.hash(password, 10);
+        await loginModel.create({ username, email, password: hashedPass, profile });
+        return res.status(201).json({ msg: "registration successfully completed" });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ msg: "some error occured" });
+    }
+}
