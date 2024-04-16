@@ -78,3 +78,16 @@ export async function work(req, res) {
         return res.status(500).json({ msg: "some error occured" });
     }
 }
+
+
+export async function profile(req, res){
+    try {
+        let {text} = req.body;
+        if(!text) return res.status(400).json({msg:"text cannot be empty"});
+        await listModel.create({text: profile, completed: false});
+        return res.status(201).json({msg:"text added successfully"});
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({msg:"some error occured"});
+    }
+}
