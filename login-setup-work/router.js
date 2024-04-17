@@ -7,6 +7,6 @@ const router = Router();
 router.route("/register").post(register);
 router.route("/login").post(login);
 router.route("/work").post(work);
-router.route("/profile").post(profile);
+router.route("/profile").get(profile);
 router.route("/private-data").get(auth,pd);
 export default router;
