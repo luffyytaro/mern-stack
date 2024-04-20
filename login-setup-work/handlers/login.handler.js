@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import loginModel from "../model/login.model.js"
+import textModel from "../model/text.model.js";
 
 const { sign } = jwt;
 
@@ -80,14 +81,41 @@ export async function work(req, res) {
 }
 
 
-export async function profile(req, res){
+
+export async function profile(req, res) {
+    try {
+        let {userId} = req.user;
+        let result = await loginModel.findOne({_id: userId},{password: 0});
+        return res.status(200).json({msg:"text cannot be empty",result})
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ msg: "some error occured" });
+    }
+}
+
+export async function textbox(req, res){
     try {
         let {text} = req.body;
+        let { userId } = req.user;
         if(!text) return res.status(400).json({msg:"text cannot be empty"});
-        await listModel.create({text: profile, completed: false});
+        await textModel.create({text, userId});
         return res.status(201).json({msg:"text added successfully"});
     } catch (error) {
         console.log(error);
         return res.status(500).json({msg:"some error occured"});
     }
 }
+
+export async function readtext(req, res){
+    try {
+        let {text} = req.body;
+        let { userId } = req.user;
+        if(!text) return res.status(400).json({msg:"text cannot be empty"});
+        await textModel.find({userId});
+        return res.status(201).json({msg:"text added successfully"});
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({msg:"some error occured"});
+    }
+}
+
